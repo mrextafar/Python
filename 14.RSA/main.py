@@ -27,9 +27,7 @@ def SetPQ() -> list:
     'Указываем p и q'
 
     pSelect = PrimeNumbers(100)
-    for i in pSelect[:]:
-        if i < 34:
-            pSelect.remove(i)
+    pSelect = [j for j in pSelect if j >= 34]
 
     print(pSelect)
     p = int(input("Выберите первое число: "))
@@ -72,7 +70,7 @@ def SetD(a: int, fi: int, e: int) -> int:
     'Даём выбрать d(часть закрытого ключа)'
 
     dSelect = []
-    for i in range(a**2):
+    for i in range(a**3):
         if (i * e) % fi == 1:
             dSelect.append(i)
     d = int(input(f"Выберите одно из этих чисел {dSelect}: "))
